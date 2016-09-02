@@ -76,8 +76,6 @@ module.exports = function (wallaby) {
 			{pattern: 'test/fixture.js', load: false},
 
 		/** VENDOR */
-			{pattern: 'node_modules/mithril/mithril.min.js', instrument: false},
-			{pattern: 'node_modules/d3/d3.min.js', instrument: false},
 			//{pattern: 'node_modules/bootstrap/js/affix.js', instrument: false},
 			//{pattern: 'node_modules/bootstrap/js/dropdown.js', instrument: false},
 			//{pattern: 'node_modules/bootstrap/js/modal.js', instrument: false},
