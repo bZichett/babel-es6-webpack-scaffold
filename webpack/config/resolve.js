@@ -1,7 +1,7 @@
 var paths = require('../../config/paths')
 
 module.exports = {
-    extensions: ['', '.js', '.json'],
+    extensions: ['.js', '.json'],
     alias: {
         // This `alias` section can be safely removed after ejection.
         // We do this because `babel-runtime` may be inside `react-scripts`,

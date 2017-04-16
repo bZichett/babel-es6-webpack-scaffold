@@ -2,3 +2,5 @@
 node_modules
 es6-scaffold.iml
 webpack/stats
+build/
+scaffold.iml

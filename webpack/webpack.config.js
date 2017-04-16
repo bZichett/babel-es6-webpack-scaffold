@@ -7,6 +7,10 @@ var autoprefixer = require('autoprefixer');
 var paths = require('../config/paths');
 
 module.exports = function (env) {
+	if(typeof(env) ==='string') env = JSON.parse(env)
+	console.log(env)
+
+	var webpackConfigDevServer = require('./webpack.config.dev.server')(env);
 
 	global.__TESTING__ = env.__TESTING__ || !!args["testing"]
 	global.__PROD__ = env.__PROD__ || !!args["production"]
@@ -44,16 +48,17 @@ module.exports = function (env) {
 		resolve,
 		module: _module,
 		externals,
-		eslint: {
-			configFile: path.join(paths.config, 'eslint.js'),
-			useEslintrc: false
-		},
-		postcss: function () {
-			return [autoprefixer];
-		},
-		sassLoader: {
-			//includePaths: paths.scss.all
-		},
+		devServer: webpackConfigDevServer,
+		// eslint: {
+		// 	configFile: path.join(paths.config, 'eslint.js'),
+		// 	useEslintrc: false
+		// },
+		// postcss: function () {
+		// 	return [autoprefixer];
+		// },
+		// sassLoader: {
+		//includePaths: paths.scss.all
+		// },
 		plugins: require('./config/plugins')
 	}
 }

@@ -17,11 +17,7 @@ var extractCSS = new ExtractTextPlugin({
 })
 
 module.exports = [
-
-    new webpack.NoErrorsPlugin(),
-    new webpack.dependencies.LabeledModulesPlugin(),
-    //new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
-    new webpack.DefinePlugin({
+   new webpack.DefinePlugin({
         __PROD__: __PROD__,
         __DEV__: __DEV__,
         __BUILD__: __PROD__ || __DEV__,

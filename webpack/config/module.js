@@ -22,26 +22,26 @@ var cssLoaderQuery = {
 };
 
 module.exports = {
-	preLoaders: [
-		{
-			test: /\.js$/,
-			loader: 'eslint',
-			include: paths.appSrc,
-		}
-	],
+	// preLoaders: [
+	// 	{
+	// 		test: /\.js$/,
+	// 		loader: 'eslint',
+	// 		include: paths.appSrc,
+	// 	}
+	// ],
 	loaders: [
 		{
 			test: /\.js$/,
 			include: paths.appSrc,
 			loader: 'babel-loader',
-			cacheDirectory: true,
+			// cacheDirectory: true,
 			query: require(__PROD__ ? '../../config/babel.prod' : '../../config/babel.dev')
 		},
 		{
 			test: /\.scss$/,
 			include: [paths.appSrc, paths.appNodeModules],
 			loaders: 'css-loader' + q('!sass-loader', cssLoaderQuery), //extractScss,
-			name: 'sass-loader' // used only to easily filter this loader out for unit testing
+			// name: 'sass-loader' // used only to easily filter this loader out for unit testing
 		},
 		{
 			test: /\.css$/,
@@ -67,26 +67,21 @@ module.exports = {
 				q('file-loader', {
 					hash: 'sha512',
 					digest: 'hex',
-					name: (__BUILD__ ? paths.build.filesConfig : paths.build.filesConfigDev)
+					name: (__BUILD__ ? paths.build.filesConfig : paths.build.filesConfigDev),
+					query: {
+						name: __PROD__ ? 'static/media/[name].[hash:8].[ext]' : 'static/media/[name].[ext]'
+					}
 				}),
 				q('image-webpack', {
 					bypassOnDebug: true,
 					optimizationLevel: 7,
-					interlaced: false
+					interlaced: false,
+					query: {
+						name: __PROD__ ? 'static/media/[name].[hash:8].[ext]' : 'static/media/[name].[ext]'
+					}
 				})
 			],
-			query: {
-				name: __PROD__ ? 'static/media/[name].[hash:8].[ext]' : 'static/media/[name].[ext]'
-			}
-		},
-		{
-			test: /\.(mp4|webm)(\?.*)?$/,
-			include: [paths.appSrc, paths.appNodeModules],
-			loader: 'url',
-			query: {
-				limit: 10000,
-				name: __PROD__ ? 'static/media/[name].[ext]': 'static/media/[name].[hash:8].[ext]'
-			}
+
 		}
 	]
 }

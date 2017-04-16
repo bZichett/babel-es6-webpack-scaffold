@@ -27,7 +27,7 @@ gh:
 	git subtree push --prefix build origin gh-pages
 
 dev:
-	node ./scripts/start.js
+	./node_modules/.bin/webpack-dev-server --config webpack/webpack.config.js --env.__DEV__=true --env.devServer=true
 
 build:
 	node ./scripts/build.js
