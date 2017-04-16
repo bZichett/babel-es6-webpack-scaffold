@@ -1,10 +1,8 @@
 {
-  "name": "laddice-development-graph",
-  "version": "1.0.1",
+  "name": "babel-es6-webpack-scaffold",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
-  "homepage_1": "www.projectample.com/development/dependency-graph/laddice/",
-  "homepage": "/",
   "directories": {
     "test": "test"
   },
@@ -15,10 +13,6 @@
   "author": "Ben Zichettello",
   "license": "MIT",
   "dependencies": {
-    "d3": "^4.2.2",
-    "extend": "^3.0.0",
-    "lodash": "^4.15.0",
-    "mithril": "^0.2.5"
   },
   "devDependencies": {
     "archy": "^1.0.0",
@@ -88,8 +82,8 @@
     "style-loader": "^0.13.1",
     "transform-loader": "^0.2.3",
     "wallaby-webpack": "0.0.23",
-    "webpack": "^2.1.0-beta.21",
-    "webpack-dev-server": "^1.14.1",
+    "webpack": "2.4.1",
+    "webpack-dev-server": "2.4.2",
     "whatwg-fetch": "^1.0.0",
     "yargs": "^4.8.1"
   }

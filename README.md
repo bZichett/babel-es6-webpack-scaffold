@@ -8,21 +8,6 @@
 * [Tooling & Framework](#markdown-header-tooling-framework)
 * [Testing](#markdown-header-testing)
 
-## Problem Specification
-Convert a stats.json file outputted by webpack and visualize in a force directed diagram + detail/connections view
-
-### Input:  
-stats.json
-
-### Output:  
-Force Directed Graph View  
-Detail & Connections View  
-
-## Tasks
-
-Add colors  
-Detail View for selected node
-
 ## Setup
 
     npm install
@@ -56,12 +41,3 @@ Chai (assertions - expect)
 ### Production Build
 	
 	make build
-
-## Inspiration / Credits
-   
-* Force-Directed Graph with Drag/Zoom/Pan/Center/Resize/Labels/Shapes/Filter/Highlight  
-	* https://gist.github.com/eyaler/10586116  
-
-* Stellar Webpack  
-	* https://github.com/alexkuz/stellar-webpack/blob/master/src/WebpackGraph.js  
-	* A lot of the scaffolding was inspired by this project.  
